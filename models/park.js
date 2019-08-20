@@ -35,4 +35,11 @@ Park.prototype.allOfSpecies = function(speciesToCheck) {
   return listOfDinos;
 };
 
+Park.prototype.removeAllOfSpecies = function(speciesToCheck) {
+  listOfDinos = this.allOfSpecies(speciesToCheck);
+  for (let dinosaur of listOfDinos) {
+    this.removeDinosaur(dinosaur);
+  };
+};
+
 module.exports = Park;
