@@ -82,4 +82,14 @@ describe('Park', function() {
     const actual = park.revenuePerYear();
     assert.strictEqual(actual, 3226600000)
   });
+
+  it('should bring back the total of each diet type', function() {
+    const actual = park.dinoDietCount()
+    const expected = {
+      'carnivore': 2,
+      'herbivore': 4,
+      'omnivore': 0
+    };
+    assert.deepStrictEqual(actual,expected)
+  })
 });

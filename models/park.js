@@ -58,4 +58,24 @@ Park.prototype.revenuePerYear = function() {
   return this.visitsPerYear() * this.ticketPrice;
 };
 
+Park.prototype.dinoDietCount = function() {
+  let carnivores = 0;
+  let herbivores = 0;
+  let omnivores = 0;
+  for (let dinosaur of this.dinosaurs) {
+    if (dinosaur.diet === 'carnivore') {
+      carnivores++
+    } else if (dinosaur.diet === 'herbivore') {
+      herbivores++
+    } else if (dinosaur.diet === 'omnivore') {
+      omnivores++
+    };
+  };
+  return {
+    'carnivore': carnivores,
+    'herbivore': herbivores,
+    'omnivore': omnivores
+  };
+};
+
 module.exports = Park;
