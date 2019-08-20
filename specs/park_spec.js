@@ -77,4 +77,9 @@ describe('Park', function() {
     const actual = park.visitsPerYear();
     assert.strictEqual(actual, 8066500)
   });
+
+  if('should bring back the revenue per year', function() {
+    const actual = park.revenuePerYear();
+    assert.strictEqual(actual, 3226600000)
+  });
 });
