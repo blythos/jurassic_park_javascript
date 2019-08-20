@@ -9,7 +9,7 @@ Park.prototype.addDinosaur = function(dinosaur) {
 }
 
 Park.prototype.removeDinosaur = function(dinosaur) {
-  index = this.dinosaurs.indexOf(dinosaur);
+  let index = this.dinosaurs.indexOf(dinosaur);
   this.dinosaurs.splice(index, 1);
 }
 
@@ -36,10 +36,18 @@ Park.prototype.allOfSpecies = function(speciesToCheck) {
 };
 
 Park.prototype.removeAllOfSpecies = function(speciesToCheck) {
-  listOfDinos = this.allOfSpecies(speciesToCheck);
+  let listOfDinos = this.allOfSpecies(speciesToCheck);
   for (let dinosaur of listOfDinos) {
     this.removeDinosaur(dinosaur);
   };
+};
+
+Park.prototype.visitsPerDay = function() {
+  let total = 0;
+  for (let dinosaur of this.dinosaurs) {
+    total += dinosaur.guestsAttractedPerDay;
+  };
+  return total;
 };
 
 module.exports = Park;
