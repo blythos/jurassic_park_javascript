@@ -14,16 +14,25 @@ Park.prototype.removeDinosaur = function(dinosaur) {
 }
 
 Park.prototype.mostVisited = function() {
-  let most = 0
+  let mostSoFar = 0
   let visited;
   for (let dinosaur of this.dinosaurs) {
-    if (dinosaur.guestsAttractedPerDay > visited) {
-      visited = dinosaurl
+    if (dinosaur.guestsAttractedPerDay > mostSoFar) {
+      visited = dinosaur;
+      mostSoFar = dinosaur.guestsAttractedPerDay;
     };
   };
   return visited;
 };
 
-Park.prototype
+Park.prototype.allOfSpecies = function(speciesToCheck) {
+  let listOfDinos = [];
+  for (let dinosaur of this.dinosaurs) {
+    if (dinosaur.species === speciesToCheck) {
+      listOfDinos.push(dinosaur);
+    };
+  };
+  return listOfDinos;
+};
 
 module.exports = Park;
