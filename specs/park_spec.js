@@ -71,5 +71,10 @@ describe('Park', function() {
   it('should bring back the total number of visits per day', function() {
     const actual = park.visitsPerDay();
     assert.strictEqual(actual, 22100)
-  })
+  });
+
+  it('should bring back the total number of visits per year', function() {
+    const actual = park.visitsPerYear();
+    assert.strictEqual(actual, 8066500)
+  });
 });
